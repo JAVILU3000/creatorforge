@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Professional AI Creation Suite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a413ec",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#0f0814",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(164, 19, 236, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(164, 19, 236, 0.2);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(164, 19, 236, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between px-6 py-4 sticky top-0 z-40 bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+<h1 class="text-xl font-bold tracking-tight text-slate-100">AI Suite</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-100">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/50 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlwq00C9xyxA2wfuaDCcaWbd-707U2JBWOWLrf2PQbCwoZjLsLc6nDYryW00Z3XVZKQR43k6IarvyUATzf2ZTm8g-NETcPdLOOmStkh6q1MrNzPa-Nc79GQaRSa3dqi_m-_InJHQA-gbasGAS0O-qsd_IqCgCHoZyrbhnCtFC9tGE8fYPz2Twtw8d_SMkDIJbwGaPGeugmyx65qsObJW_o12znTVBhAgVnwlImyIDnKA85KwWziPsGuCaGO2uLO5ODNq3zh9epzT40"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col overflow-y-auto pb-24">
+<!-- Hero Input Section -->
+<section class="px-6 pt-8 pb-4">
+<div class="flex flex-col gap-1 mb-6">
+<h2 class="text-2xl font-bold text-slate-100">What will you create?</h2>
+<p class="text-slate-400 text-sm">Describe your masterpiece in detail</p>
+</div>
+<!-- Prompt Card -->
+<div class="glass-panel rounded-xl p-4 flex flex-col gap-4">
+<div class="relative">
+<textarea class="w-full bg-background-dark/50 border border-primary/20 rounded-lg p-4 text-slate-100 placeholder:text-slate-500 focus:ring-1 focus:ring-primary focus:border-primary min-h-[140px] resize-none text-base" placeholder="A cyberpunk ronin standing in a rain-slicked Tokyo street, neon signs reflecting in puddles, cinematic lighting, 8k resolution, photorealistic..."></textarea>
+<div class="absolute bottom-3 right-3 flex gap-2">
+<button class="p-2 bg-primary/20 rounded-lg text-primary hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-lg">mic</span>
+</button>
+<button class="p-2 bg-primary/20 rounded-lg text-primary hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-lg">upload_file</span>
+</button>
+</div>
+</div>
+<!-- Aspect Ratio & Settings Toggle -->
+<div class="flex items-center justify-between text-xs font-medium text-slate-400 px-1">
+<div class="flex gap-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">aspect_ratio</span> 16:9</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">tune</span> High Detail</span>
+</div>
+<span class="text-primary">Advanced Settings</span>
+</div>
+<button class="w-full py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg flex items-center justify-center gap-2 transition-all neon-glow">
+<span class="material-symbols-outlined">bolt</span>
+                    Generar Imagen
+                </button>
+</div>
+</section>
+<!-- Result Section -->
+<section class="px-6 py-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-lg text-slate-100">Last Generation</h3>
+<span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full uppercase tracking-wider font-bold">New</span>
+</div>
+<div class="relative group rounded-xl overflow-hidden aspect-[4/5] border border-primary/20">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Futuristic neon city with purple and blue lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOk1BRLdYcL8blqm5Vs_tr8nVPr6PDRqHVzuyaQqV8SGONy8Z86sjWzkPmGHHj4BipMP1XUR7KI6HL4m4VPoIdkNrscbfCMn7GI3adQ6E2mD2vL71S3DQJn41l5O0VAJDIPGbAhkBy-70xqNIezgBl89kstmNysxqc4EEY_LFpcN0m8m1p_7EaN9deGy92B260xrseVAvDfN-kYD81g2dHJjv9MrkOWahDqEaSlWpbViw3FG174pbm5atKoORDF1n89wQPfOVSCLcH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+<!-- Image Overlay Controls -->
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<p class="text-xs text-slate-300 font-medium">Cyberpunk Void #42</p>
+<p class="text-[10px] text-slate-500">Rendered in 12s • v6.1</p>
+</div>
+<div class="flex gap-2">
+<button class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-white text-xl">download</span>
+</button>
+<button class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-white text-xl">share</span>
+</button>
+<button class="size-10 rounded-full bg-primary flex items-center justify-center neon-glow hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-xl">magic_button</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Preview -->
+<section class="px-6 py-4">
+<h3 class="font-bold text-lg text-slate-100 mb-4">Your Recent Creations</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="aspect-square rounded-lg overflow-hidden border border-primary/10">
+<img class="w-full h-full object-cover" data-alt="Abstract colorful light trails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZqPYuNFRqI1ltV3RSlh-WwmqmSZ6gYIS_1MLmKpLRZmAEavG8ge7D4rNb6Q4jeFWXFSqq9DgoJmu7zzsphqtXD4mujrJpOLJUn_ZXP8GjKT6JEGOO-MAbDtH0Yw8pCTbrp0LssF0Mzl3wExjkk_630HHrAnJGHOLlf4ZsHYGoJu1u_powmwL-m43ZfqwKyjGQIO5dA1peAXB1XuSpSEU7oeGK4QPSQaBRB-LTsnVyGw5YbAGXUuqH3mOHF7Gss8thiZfB02pEEKxg"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-primary/10">
+<img class="w-full h-full object-cover" data-alt="Futuristic architecture in fog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA735I3wJLoydRNKSlTq3qASPxUX_hovNeLo03oWfNNRYyGuw_wfJB1Zvo0cG3qJRXKaEdtjoXjGxYWG-o20iRvo1q-WJkYicx0cvXsIUjPdpr2o16YrNf98O_pLwk42xL1w-5wR3XDeR7D04-5Ugbtg69A8ReaA5nkvNLxtC2hrR4kC0KpDeCHdiWxfSryaYJK5cLTUK5WOcqtK6h1Bz8H7RIsAsWi9kIs6uCBN6nJShN8mWffmhQj0c_O_i-_W1PpPUaGGXTLBW8E"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Fixed) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-dark/95 backdrop-blur-xl border-t border-primary/20 pb-8 pt-3 px-4 z-50">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 flex-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">auto_awesome</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Create</span>
+</a>
+<a class="flex flex-col items-center gap-1 flex-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">collections</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Gallery</span>
+</a>
+<a class="flex flex-col items-center gap-1 flex-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">brush</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Branding</span>
+</a>
+<a class="flex flex-col items-center gap-1 flex-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">video_library</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Youtube</span>
+</a>
+<a class="flex flex-col items-center gap-1 flex-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Sidebar Drawer (Hidden by Default in standard layout but structure kept as requested) -->
+<div class="hidden absolute left-0 top-0 z-50 h-full w-3/4 bg-background-dark border-r border-primary/20 p-6 shadow-2xl">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 mb-4">
+<div class="h-10 w-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white">blur_on</span>
+</div>
+<span class="text-xl font-bold">Suite Pro</span>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 p-3 bg-primary/10 rounded-lg text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+<span class="font-bold">Generar imagen</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-slate-400 hover:bg-primary/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-medium">Galería</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-slate-400 hover:bg-primary/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">palette</span>
+<span class="font-medium">Branding</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-slate-400 hover:bg-primary/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">smart_display</span>
+<span class="font-medium">Miniaturas YouTube</span>
+</a>
+<hr class="border-primary/10 my-4"/>
+<a class="flex items-center gap-4 p-3 text-slate-400 hover:bg-primary/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Cuenta</span>
+</a>
+</nav>
+</div>
+</div>
+</body></html>
