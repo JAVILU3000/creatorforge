@@ -1,68 +1,43 @@
 "use client";
-
 import { useState } from "react";
 
 export default function Page() {
-  const [niche, setNiche] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const generateIdeas = async () => {
-    if (!niche) return;
-
+  async function generateIdeas() {
     setLoading(true);
-    setResult("");
 
-    try {
-      const res = await fetch("/api/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ niche }),
-      });
+    const res = await fetch("/api/generate", {
+      method: "POST"
+    });
 
-      const data = await res.json();
-      setResult(data.result);
-    } catch (error) {
-      setResult("Error generando ideas.");
-    }
-
+    const data = await res.json();
+    setResult(data.idea);
     setLoading(false);
-  };
+  }
 
   return (
-    <div style={{ padding: "40px", maxWidth: "800px", margin: "auto" }}>
-      <h1>Generador de Ideas Virales</h1>
-
-      <input
-        type="text"
-        placeholder="Ej: Finanzas para jóvenes"
-        value={niche}
-        onChange={(e) => setNiche(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "10px",
-          marginTop: "20px",
-          fontSize: "16px",
-        }}
-      />
+    <div style={{ padding: 40, fontFamily: "Arial" }}>
+      <h1>CreatorForge</h1>
 
       <button
         onClick={generateIdeas}
         style={{
-          marginTop: "20px",
           padding: "10px 20px",
           fontSize: "16px",
-          cursor: "pointer",
+          cursor: "pointer"
         }}
       >
-        {loading ? "Generando..." : "Generar Ideas"}
+        Generar idea viral
       </button>
 
+      {loading && <p>Generando...</p>}
+
       {result && (
-        <div style={{ marginTop: "30px", whiteSpace: "pre-wrap" }}>
-          {result}
+        <div style={{ marginTop: "20px" }}>
+          <b>Idea:</b>
+          <p>{result}</p>
         </div>
       )}
     </div>
