@@ -1,35 +1,42 @@
-"use client";
-import { useState } from "react";
+"use client"
+
+import { useState } from "react"
 
 export default function Page() {
-  const [result, setResult] = useState("");
-  const [loading, setLoading] = useState(false);
+
+  const [result, setResult] = useState("")
+  const [loading, setLoading] = useState(false)
 
   async function generateIdeas() {
-    setLoading(true);
 
-    const res = await fetch("/api/generate", {
-      method: "POST"
-    });
+    setLoading(true)
 
-    const data = await res.json();
-    setResult(data.idea);
-    setLoading(false);
+    const res = await fetch("/api/generate", { method: "POST" })
+    const data = await res.json()
+
+    setResult(data.idea)
+    setLoading(false)
+
   }
 
   return (
-    <div style={{ padding: 40, fontFamily: "Arial" }}>
-      <h1>CreatorForge</h1>
+
+    <div style={{ padding: "40px", fontFamily: "Arial" }}>
+
+      <h1>Generador de Ideas Virales</h1>
 
       <button
         onClick={generateIdeas}
         style={{
+          marginTop: "20px",
           padding: "10px 20px",
           fontSize: "16px",
           cursor: "pointer"
         }}
       >
+
         Generar idea viral
+
       </button>
 
       {loading && <p>Generando...</p>}
@@ -40,6 +47,9 @@ export default function Page() {
           <p>{result}</p>
         </div>
       )}
+
     </div>
-  );
+
+  )
+
 }
